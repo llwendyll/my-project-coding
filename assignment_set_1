@@ -1,0 +1,14 @@
+from collections import Counter
+
+n = input()
+if int(n) > 0:
+    numbers = input()
+    counter = Counter(numbers.split(' '))
+    if len(counter) == 1:
+        print(counter.most_common(1)[0][0])
+    else:
+        n1, n2 = counter.most_common(2)
+        if n1[1] > n2[1]:
+            print(n1[0])
+        else:
+            print(-1)
